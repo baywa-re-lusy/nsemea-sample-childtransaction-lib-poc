@@ -4,6 +4,6 @@ import {SampleChildTransactionService} from "./SampleChildTransactionService";
 export class SampleChildTransactionServiceLUSY extends SampleChildTransactionService {
   override log (message: string) {
     super.log(message);
-    log.debug('LUSY > SampleChildTransactionService', `CHILD <LUSY> Generic : ${message}`);
+    log.debug('LUSY > SampleChildTransactionService', `CHILD LUSY Generic : ${message}`);
   }
 }
