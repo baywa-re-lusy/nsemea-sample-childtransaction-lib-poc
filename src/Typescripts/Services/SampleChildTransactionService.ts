@@ -2,7 +2,7 @@ import {SampleParentTransactionService} from "@nsemea_lib/Services/SampleParentT
 import * as log from 'N/log';
 
 export class SampleChildTransactionService extends SampleParentTransactionService {
-  override (message: string) {
+  override log (message: string) {
     super.log(message);
     log.debug('SampleChildTransactionService', message);
   }
