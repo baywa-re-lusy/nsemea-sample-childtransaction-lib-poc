@@ -14,7 +14,7 @@ export class SampleChildTransactionServiceLUSY extends SampleChildTransactionSer
   }
 
   override presetFields(SampleTransaction: SampleChildTransaction) {
-    log.debug('LUSY > SampleChildTransactionServiceLUSY', 'presetFields triggered 1');
+    log.debug({ title: 'LUSY > SampleChildTransactionServiceLUSY', details: 'presetFields triggered 1'});
     super.presetFields(SampleTransaction);
     log.debug('LUSY > SampleChildTransactionServiceLUSY', 'presetFields triggered 2');
     SampleParentTransactionServiceLUSY.presetFields(SampleTransaction);
