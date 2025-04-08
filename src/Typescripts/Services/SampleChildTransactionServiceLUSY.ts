@@ -14,7 +14,9 @@ export class SampleChildTransactionServiceLUSY extends SampleChildTransactionSer
   }
 
   override presetFields(SampleTransaction: SampleChildTransaction) {
+    log.debug('LUSY > SampleChildTransactionServiceLUSY', 'presetFields triggered 1');
     super.presetFields(SampleTransaction);
+    log.debug('LUSY > SampleChildTransactionServiceLUSY', 'presetFields triggered 2');
     SampleParentTransactionServiceLUSY.presetFields(SampleTransaction);
     SampleTransaction.custbody_namecontactonsite += ' LUSY !!!';
     log.debug('LUSY > SampleChildTransactionService', 'CHILD LUSY Generic: presetFields');
