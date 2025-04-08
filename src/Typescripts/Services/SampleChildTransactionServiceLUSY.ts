@@ -3,6 +3,7 @@ import {SampleChildTransactionService} from "./SampleChildTransactionService";
 import {SampleParentTransactionServiceLUSY} from "@nsemea_lib/Services/SampleParentTransactionServiceLUSY";
 import {SampleParentTransaction} from "@nsemea_lib/Entities/SampleParentTransaction";
 import {SampleChildTransaction} from "../Entities/SampleChildTransaction";
+import {SampleParentTransactionService} from "@nsemea_lib/Services/SampleParentTransactionService";
 
 export class SampleChildTransactionServiceLUSY extends SampleChildTransactionService {
   override log (message: string) {
@@ -13,8 +14,8 @@ export class SampleChildTransactionServiceLUSY extends SampleChildTransactionSer
   }
 
   override presetFields(SampleTransaction: SampleChildTransaction) {
-    super.presetFields(SampleTransaction);
-    SampleParentTransactionServiceLUSY.presetFields(SampleTransaction);
+    super.presetFields(<SampleParentTransaction> SampleTransaction);
+    SampleParentTransactionServiceLUSY.presetFields(<SampleParentTransaction> SampleTransaction);
     SampleTransaction.custbody_namecontactonsite += ' LUSY !!!';
     log.debug('LUSY > SampleChildTransactionService', 'CHILD LUSY Generic: presetFields');
   }
