@@ -18,6 +18,7 @@ export class SampleChildTransactionServiceLUSY extends SampleChildTransactionSer
     super.presetFields(SampleTransaction);
     log.debug('LUSY > SampleChildTransactionServiceLUSY', 'presetFields triggered 2');
     SampleParentTransactionServiceLUSY.presetFieldsLUSY(SampleTransaction);
+
     SampleTransaction.custbody_namecontactonsite += ' LUSY !!!';
     log.debug('LUSY > SampleChildTransactionService', 'CHILD LUSY Generic: presetFields');
   }
@@ -25,3 +26,7 @@ export class SampleChildTransactionServiceLUSY extends SampleChildTransactionSer
 
 // Apply the mixin to the class prototype
 Object.assign(SampleChildTransactionServiceLUSY.prototype, SampleParentTransactionServiceLUSY);
+
+export interface SampleChildTransactionServiceLUSY {
+  logLusy1(message: string): void;
+}
